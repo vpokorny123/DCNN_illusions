@@ -41,7 +41,7 @@ def create_grating(size, orientation_rad, spatial_frequency, phase,
    
 
 # Define parameters
-save_plots = 0
+save_plots = 1
 spatial_frequencies = np.round(np.arange(.01,.3,.01),2) # in cycles per pixel
 orientation_deg = 45 # in degrees
 orientation_rad = np.deg2rad(orientation_deg) # convert to radians
