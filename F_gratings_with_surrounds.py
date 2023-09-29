@@ -18,7 +18,7 @@ from keras.models import Model
 from matplotlib import pyplot
 import matplotlib.patches as patches
 
-layer = 5
+layer = 6
 filter_num = 1
 plot_feature_maps = 1
 

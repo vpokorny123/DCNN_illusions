@@ -1,0 +1,1 @@
+{"Best Orientation": 2.426007660272118, "Best Orientation (Degrees)": 139.0, "Best Spatial Frequency": 0.23, "Best Activation": 1.6380161046981812}

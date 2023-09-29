@@ -14,7 +14,7 @@ from keras.models import Model
 
 
 # Define parameters
-layer = 6
+layer = 4
 spatial_frequencies = np.round(np.arange(.01,.3,.01),2) # in cycles per pixel
 orientation_deg = 90 # in degrees
 orientation_rad = np.deg2rad(orientation_deg) # convert to radians
@@ -24,10 +24,14 @@ size = (224, 224) # in pixels
 radius = 50 # in pixels
 cmap = 'gray'
 neuron_num = (50,50) #pick a "neuron" to focus on
-filter_num = 100
+filter_num = 0
+model_name = 'resnet'
 
 def main():
-    model = tf.keras.applications.vgg16.VGG16()
+    if model_name == 'resnet':
+        model = tf.keras.applications.resnet50.ResNet50()
+    else:
+        model = tf.keras.applications.vgg16.VGG16()
     short_model = Model(inputs=model.inputs, outputs=model.layers[layer].output)
     neurons_dim = short_model.output_shape[1:3]
     neuron_of_interest = round((neurons_dim[0]-1)/2)
